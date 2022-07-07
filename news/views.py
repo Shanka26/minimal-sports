@@ -46,11 +46,11 @@ def getStories(request):
         
         t=a.find('h2',class_='t1')
         if t is not None:
-            title='<h2>'+t.text+'</h2>'
+            title=t.text
 
         s=a.find('p',class_='t6 pt-2')
         if s is not None:
-            body='<h4>'+s.text+'</h4>'
+            body=s.text
         stories.append({
             'src':img,
             'title':title,
