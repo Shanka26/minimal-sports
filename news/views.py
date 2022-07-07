@@ -3,6 +3,7 @@ from django.http import HttpResponse
 import requests
 from bs4 import BeautifulSoup 
 from rest_framework.response import Response
+from rest_framework.decorators import api_view
 
 
 def getNba():
@@ -23,6 +24,7 @@ def getNbaNews(request):
     
     return HttpResponse(srml)
 
+@api_view(['GET','PUT'])
 def getStories(request):
     if request.method == 'GET':
         articles=getNba()
