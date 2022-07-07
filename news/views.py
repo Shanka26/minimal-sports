@@ -23,7 +23,7 @@ def getNbaNews(request):
         srml+='<h2>'+str(a.find('h2'))+'</h2>'
         srml+='<h4>'+str(a.find('p'))+'</h4>'
     
-    return HttpResponse(articles[0].find('img',class_='VideoThumbnail_image__3nEOl'))
+    return HttpResponse(articles[1].find('img',class_='VideoThumbnail_image__3nEOl'))
 
 @api_view(['GET','PUT'])
 def getStories(request):
