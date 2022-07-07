@@ -16,14 +16,15 @@ def getNba():
 def getNbaNews(request):
     articles=getNba()
     srml=""
+    i=[]
     for a in articles:
         # a.find('h2')
-        i=str(a.find('img',class_='VideoThumbnail_image__3nEOl')).split("src=")[1]
+        i=str(a.find('img',class_='VideoThumbnail_image__3nEOl')).split("src=")
         srml+='<h2>'+str(i)+'</h2>'
         srml+='<h2>'+str(a.find('h2'))+'</h2>'
         srml+='<h4>'+str(a.find('p'))+'</h4>'
     
-    return HttpResponse(srml)
+    return HttpResponse(i)
 
 @api_view(['GET','PUT'])
 def getStories(request):
