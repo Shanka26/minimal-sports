@@ -22,8 +22,8 @@ def getNbaNews(request):
         i=a.find('img',class_='VideoThumbnail_image__3nEOl')
         if i is not None:
             srml+=i['src']
-        srml+='<h2>'+str(i)+'</h2>'
-        srml+='<h2>'+str(a.find('h2'))+'</h2>'
+        
+        srml+='<h2>'+a.find('h2')['text']+'</h2>'
         srml+='<h4>'+str(a.find('p'))+'</h4>'
     
     return HttpResponse(srml)
