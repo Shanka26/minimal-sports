@@ -18,7 +18,7 @@ def getNbaNews(request):
     srml=""
     for a in articles:
         # a.find('h2')
-        srml+="<img src="+str(a.find('img'))+"/>"
+        srml+=str(a.find('img'))
         srml+='<h2>'+str(a.find('h2'))+'</h2>'
         srml+='<h4>'+str(a.find('p'))+'</h4>'
     
