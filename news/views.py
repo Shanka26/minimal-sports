@@ -43,14 +43,17 @@ def getStories(request):
         i=a.find('img',class_='VideoThumbnail_image__3nEOl')
         if i is not None:
             img=i['src']
+        else: i= None
         
         t=a.find('h2',class_='t1')
         if t is not None:
             title=t.text
+        else: t= None
 
         s=a.find('p',class_='t6 pt-2')
         if s is not None:
             body=s.text
+        else: s= None
         stories.append({
             'src':img,
             'title':title,
