@@ -23,8 +23,13 @@ def getNbaNews(request):
         if i is not None:
             srml+=i['src']
         
-        srml+='<h2>'+a.find('h2')['text']+'</h2>'
-        srml+='<h4>'+str(a.find('p'))+'</h4>'
+        t=a.find('h2',class_='t1')
+        if t is not None:
+            srml+='<h2>'+t['text']+'</h2>'
+
+        s=a.find('p',class_='t6 pt-2')
+        if s is not None:
+            srml+='<h4>'+s['text']+'</h4>'
     
     return HttpResponse(srml)
 
