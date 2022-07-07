@@ -26,21 +26,21 @@ def getNbaNews(request):
 
 @api_view(['GET','PUT'])
 def getStories(request):
-    if request.method == 'GET':
-        articles=getNba()
-        stories=[]
-
-        for a in articles:
-            img=str(a.find('img'))
-            title=str(a.find('h2'))
-            body=str(a.find('p'))
-            stories.append({
-                'src':img,
-                'title':title,
-                'summary':body
-            })
-
-        return Response(stories)
+    stories=[]
+    
+    articles=getNba()
+    
+    for a in articles:
+        img=str(a.find('img'))
+        title=str(a.find('h2'))
+        body=str(a.find('p'))
+        stories.append({
+            'src':img,
+            'title':title,
+            'summary':body
+        })
+    return Response(stories)
+    
         
     # story=Story(github_user=github_user,username=username,imagelink=profile)
     # github.save()
