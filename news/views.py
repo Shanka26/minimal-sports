@@ -26,7 +26,7 @@ def getNbaNews(request):
         srml+='<h2>'+str(a.find('h2'))+'</h2>'
         srml+='<h4>'+str(a.find('p'))+'</h4>'
     
-    return HttpResponse(i)
+    return HttpResponse(srml)
 
 @api_view(['GET','PUT'])
 def getStories(request):
