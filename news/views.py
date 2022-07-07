@@ -32,7 +32,7 @@ def getStories(request):
     
     for a in articles:
         i=a.find('img')
-        img=i['src']
+        img=i
         title=str(a.find('h2').text)
         body=str(a.find('p').text)
         stories.append({
