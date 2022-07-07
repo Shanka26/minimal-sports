@@ -40,10 +40,17 @@ def getStories(request):
     articles=getNba()
     
     for a in articles:
-        i=a.find('img')
-        img=i
-        title=str(a.find('h2')['text'])
-        body=str(a.find('p')['text'])
+        i=a.find('img',class_='VideoThumbnail_image__3nEOl')
+        if i is not None:
+            img=i['src']
+        
+        t=a.find('h2',class_='t1')
+        if t is not None:
+            title='<h2>'+t.text+'</h2>'
+
+        s=a.find('p',class_='t6 pt-2')
+        if s is not None:
+            body='<h4>'+s.text+'</h4>'
         stories.append({
             'src':img,
             'title':title,
