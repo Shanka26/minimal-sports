@@ -31,7 +31,8 @@ def getStories(request):
     articles=getNba()
     
     for a in articles:
-        img=str(a.find('img')['src'])
+        i=a.find('img')
+        img=i['src']
         title=str(a.find('h2').text)
         body=str(a.find('p').text)
         stories.append({
