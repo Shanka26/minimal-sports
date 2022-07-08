@@ -7,7 +7,7 @@ from rest_framework.decorators import api_view
 
 from selenium import webdriver
 import time
-import pandas as pd
+# import pandas as pd
 
 driver = webdriver.Chrome(executable_path='C:/Users/shama/Downloads/chromedriver_win32/chromedriver.exe')
 # C:\Users\shama\Downloads\chromedriver_win32
