@@ -4,7 +4,7 @@ import requests
 from bs4 import BeautifulSoup 
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from webdriver_manager.chrome import ChromeDriverManager
+# from webdriver_manager.chrome import ChromeDriverManager
 
 from selenium import webdriver
 import time
