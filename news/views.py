@@ -13,6 +13,8 @@ def getNba():
     articles=soup.findAll('article')
     return articles
 
+
+@api_view(['GET','PUT'])
 def getNbaTeam(request,team):
     url ="https://sports.yahoo.com/nba/teams/"+team
     req=requests.get(url)
