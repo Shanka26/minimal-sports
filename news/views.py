@@ -62,7 +62,8 @@ def getStories(request):
             'src':img,
             'title':title,
             'summary':body,
-            'link':link
+            'link':link,
+            'source':'NBA.com'
         })
     return Response(stories)
     
