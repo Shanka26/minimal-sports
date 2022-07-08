@@ -9,7 +9,7 @@ from rest_framework.decorators import api_view
 def getNba():
     # url ="https://www.nba.com/news"
     url = "https://sports.yahoo.com/nba/teams/"+'boston'
-    # url = 'https://sportspyder.com/nba/'+'denver-nuggets'+'/news'
+    url = 'https://sportspyder.com/nba/'+'denver-nuggets'+'/news'
     req= requests.get(url,timeout=(None,1))
     soup=BeautifulSoup(req.content)
     # articles=soup.findAll('article')
