@@ -13,8 +13,8 @@ def getNba():
     articles=soup.findAll('article')
     return articles
 
-def getNbaTeam(team):
-    url ="https://www.nba.com/news/"+team
+def getNbaTeam(request,team):
+    url ="https://sports.yahoo.com/nba/teams/"+team
     req=requests.get(url)
     soup=BeautifulSoup(req.content)
     stories=[]
