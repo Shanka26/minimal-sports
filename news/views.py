@@ -5,17 +5,30 @@ from bs4 import BeautifulSoup
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 
+from selenium import webdriver
+import time
+import pandas as pd
+
+driver = webdriver.Chrome(executable_path='C:/Users/shama/Downloads/chromedriver_win32/chromedriver.exe')
+# C:\Users\shama\Downloads\chromedriver_win32
 
 def getNba():
     # url ="https://www.nba.com/news"
-    # url = "https://sports.yahoo.com/nba/teams/"+'boston'
+    url = "https://sports.yahoo.com/nba/teams/"+'boston'
     # url = 'https://sportspyder.com/nba/'+'denver-nuggets'+'/news'
-    url = 'https://www.si.com/nba/'+"celtics"+'/'
-    req= requests.get(url,timeout=(None,70))
-    soup=BeautifulSoup(req.content)
+
+    # url = 'https://www.si.com/nba/'+"celtics"+'/'
+    # req= requests.get(url,timeout=(None,70))
+
+    driver.get(url)
+    time.sleep(1)
+    articles = driver.find_elements_by_class_name('Cf')
+    # soup=BeautifulSoup(req.content)
     # articles=soup.findAll('article')
-    articles=soup.find_all('div',class_='l-grid--item')
-    return soup
+    # articles=soup.find_all('div',class_='l-grid--item')
+    return articles
+
+
 
 
 @api_view(['GET','PUT'])
