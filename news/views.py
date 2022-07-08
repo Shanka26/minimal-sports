@@ -9,7 +9,7 @@ from rest_framework.decorators import api_view
 def getNba():
     # url ="https://www.nba.com/news"
     url ="https://sports.yahoo.com/nba/teams/"+'boston'
-    req=requests.get(url)
+    req=requests.get(url,timeout=None)
     soup=BeautifulSoup(req.content)
     # articles=soup.findAll('article')
     articles=soup.findAll('div',class_='Cf')
