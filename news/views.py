@@ -8,13 +8,14 @@ from rest_framework.decorators import api_view
 
 def getNba():
     # url ="https://www.nba.com/news"
-    url = "https://sports.yahoo.com/nba/teams/"+'boston'
+    # url = "https://sports.yahoo.com/nba/teams/"+'boston'
     # url = 'https://sportspyder.com/nba/'+'denver-nuggets'+'/news'
+    url = 'https://www.si.com/nba/'+"celtics"+'/'
     req= requests.get(url,timeout=(None))
     soup=BeautifulSoup(req.content)
     # articles=soup.findAll('article')
-    articles=soup.find_all('div')
-    return articles
+    articles=soup.find_all('div',class_='l-grid--item')
+    return soup
 
 
 @api_view(['GET','PUT'])
