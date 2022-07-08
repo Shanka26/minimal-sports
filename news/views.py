@@ -40,6 +40,10 @@ def getStories(request):
     articles=getNba()
     
     for a in articles:
+        l=a.find('a')
+        if l is not None:
+            link=l['href']
+        else: link=None
         i=a.find('img',class_='VideoThumbnail_image__3nEOl')
         if i is not None:
             img=i['src']
@@ -57,7 +61,8 @@ def getStories(request):
         stories.append({
             'src':img,
             'title':title,
-            'summary':body
+            'summary':body,
+            'link':link
         })
     return Response(stories)
     
