@@ -13,7 +13,7 @@ def getNba():
     req= requests.get(url,timeout=(None))
     soup=BeautifulSoup(req.content)
     # articles=soup.findAll('article')
-    articles=soup.findAll('div',class_='Cf')
+    articles=soup.find_all('div',class_='Cf')
     return articles
 
 
