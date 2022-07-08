@@ -20,7 +20,7 @@ def getNbaTeam(request,team):
     req=requests.get(url)
     soup=BeautifulSoup(req.content)
     stories=[]
-    articles=soup.findAll('div',class_='Py(14px) Pos(r)')
+    articles=soup.findAll('div',class_='Cf')
     for a in articles:
         l=a.find('a',class_='js-content-viewer Fw(b) Fz(18px) Lh(21px) LineClamp(2,40px) Fz(16px)!--sm1024 Lh(17px)--sm1024 LineClamp(2,34px)--sm1024 mega-item-header-link Td(n) C(#0078ff):h C(#000) LineClamp(2,46px) LineClamp(2,38px)--sm1024 not-isInStreamVideoEnabled wafer-destroyed')
         if l is not None:
@@ -46,6 +46,7 @@ def getNbaTeam(request,team):
         if s is not None:
             body=s.text
         else: body= None
+
         stories.append({
             'src':img,
             'title':title,
