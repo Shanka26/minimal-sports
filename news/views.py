@@ -31,7 +31,7 @@ def getNbaNews(request):
         if s is not None:
             srml+='<h4>'+s.text+'</h4>'
     
-    return HttpResponse(srml)
+    return HttpResponse(articles)
 
 @api_view(['GET','PUT'])
 def getStories(request):
