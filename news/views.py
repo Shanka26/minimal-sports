@@ -10,7 +10,7 @@ from selenium import webdriver
 import time
 # import pandas as pd
 
-driver = webdriver.Chrome(ChromeDriverManager().install())
+driver = webdriver.Chrome("C:/Users/shama/Downloads/chromedriver_win32/chromedriver.exe")
 # C:\Users\shama\Downloads\chromedriver_win32
 
 def getNba():
