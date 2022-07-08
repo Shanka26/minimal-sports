@@ -8,11 +8,12 @@ from rest_framework.decorators import api_view
 
 def getNba():
     # url ="https://www.nba.com/news"
-    url ="https://sports.yahoo.com/nba/teams/"+'boston'
-    req=requests.get(url,timeout=(4,30))
+    # url = "https://sports.yahoo.com/nba/teams/"+'boston'
+    url = 'https://sportspyder.com/nba/'+'denver-nuggets'+'/news'
+    req= requests.get(url,timeout=(4,30))
     soup=BeautifulSoup(req.content)
     # articles=soup.findAll('article')
-    articles=soup.findAll('div',class_='Cf')
+    articles=soup.findAll('li',class_='Article_article__1ojy8')
     return articles
 
 
