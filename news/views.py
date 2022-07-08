@@ -53,7 +53,7 @@ def getNbaTeam(request,team):
             'link':link,
             'source':source
         })
-    return stories
+    return Response(stories)
 
 def getNbaNews(request):
     articles=getNba()
