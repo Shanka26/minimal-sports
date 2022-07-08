@@ -11,7 +11,7 @@ def getNba():
     # url = "https://sports.yahoo.com/nba/teams/"+'boston'
     # url = 'https://sportspyder.com/nba/'+'denver-nuggets'+'/news'
     url = 'https://www.si.com/nba/'+"celtics"+'/'
-    req= requests.get(url,timeout=(None))
+    req= requests.get(url,timeout=(None,70))
     soup=BeautifulSoup(req.content)
     # articles=soup.findAll('article')
     articles=soup.find_all('div',class_='l-grid--item')
