@@ -102,7 +102,7 @@ def getNbaTeam(request,team):
 
 
 def getNbaNews(request):
-    articles=getNba()
+    articles=getNba(team=None)
     
     srml=""
     i=[]
