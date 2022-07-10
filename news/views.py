@@ -11,33 +11,33 @@ from selenium.webdriver.common.by import By
 import time
 from selenium.webdriver.chrome.options import Options
 import os
-# chrome_options = webdriver.ChromeOptions()
-# chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
-# chrome_options.add_argument("--headless")
-# chrome_options.add_argument("--disable-dev-shm-usage")
-# chrome_options.add_argument("--no-sandbox")
-# driver = webdriver.Chrome(chrome_options=chrome_options)
+chrome_options = webdriver.ChromeOptions()
+chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+chrome_options.add_argument("--headless")
+chrome_options.add_argument("--disable-dev-shm-usage")
+chrome_options.add_argument("--no-sandbox")
+driver = webdriver.Chrome(chrome_options=chrome_options)
 # import pandas as pd
 
 
-options = Options()
-options.headless = True
+# options = Options()
+# options.headless = True
 
-driver = webdriver.Chrome(options=options)
+# driver = webdriver.Chrome(options=options)
 #C:\Users\shama\Downloads\chromedriver_win32
 
 def getNba(team):
     # url ="https://www.nba.com/news"
     url = "https://sports.yahoo.com/nba"
     if team is not None:
-        url+="teams/"+team
+        url+="/teams/"+team
     # url = 'https://sportspyder.com/nba/'+'denver-nuggets'+'/news'
 
     # url = 'https://www.si.com/nba/'+"celtics"+'/'
     # req= requests.get(url,timeout=(None,70))
 
     driver.get(url)
-    time.sleep(1)
+    time.sleep(2)
     # articles=driver.find_elements(By.XPATH,'//div[@class="Cf"]')
     articles=driver.find_elements(By.XPATH,"//h3[@class='Mb(5px)']")
     bodies=driver.find_elements(By.XPATH,"//p[@class='Fz(14px) Lh(19px) Fz(13px)--sm1024 Lh(17px)--sm1024 LineClamp(2,38px) LineClamp(2,34px)--sm1024 M(0)']")
@@ -97,7 +97,8 @@ def getNba(team):
 @api_view(['GET','PUT'])
 def getNbaTeam(request,team):
     stories=getNba(team)
-    time.sleep(2)
+    print(stories)
+    print(len(stories))
     return Response(stories)
 
 
