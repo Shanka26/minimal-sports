@@ -28,7 +28,7 @@ driver = webdriver.Chrome(options=options)
 
 def getNba(team):
     # url ="https://www.nba.com/news"
-    url = "https://sports.yahoo.com/nba/"
+    url = "https://sports.yahoo.com/nba"
     if team is not None:
         url+="teams/"+team
     # url = 'https://sportspyder.com/nba/'+'denver-nuggets'+'/news'
