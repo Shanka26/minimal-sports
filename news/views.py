@@ -97,6 +97,7 @@ def getNba(team):
 @api_view(['GET','PUT'])
 def getNbaTeam(request,team):
     stories=getNba(team)
+    time.sleep(2)
     return Response(stories)
 
 
