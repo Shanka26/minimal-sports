@@ -20,10 +20,10 @@ driver = webdriver.Chrome(chrome_options=chrome_options)
 # import pandas as pd
 
 
-options = Options()
-options.headless = True
+# options = Options()
+# options.headless = True
 
-driver = webdriver.Chrome(options=options)
+# driver = webdriver.Chrome(options=options)
 #C:\Users\shama\Downloads\chromedriver_win32
 
 def getNba(team):
